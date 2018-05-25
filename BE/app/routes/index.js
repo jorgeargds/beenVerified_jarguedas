@@ -24,7 +24,6 @@ routes.get('/getAllGenres', function (req, res) {
 
 
 routes.post('/searchSongs', (req, res) => {
-  console.log(req.body)
   let sql = "";
   if (req.body.genre) {
     sql = "SELECT s.artist,s.title,s.duration,g.name " +
@@ -37,8 +36,7 @@ routes.post('/searchSongs', (req, res) => {
       "s.artist LIKE " + "'%" + req.body.artist + "%'"
   }
   else {
-    console.log('else')
-    sql = "SELECT s.artist,s.title,s.duration " +
+    sql = "SELECT s.artist,s.title,s.duration, g.name " +
       "FROM songs AS s " +
       "INNER JOIN genres AS g ON s.genre = g.id " +
       "WHERE s.title LIKE " + "'%" + req.body.song + "%'" +
