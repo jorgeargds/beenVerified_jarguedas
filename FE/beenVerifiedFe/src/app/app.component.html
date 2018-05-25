@@ -1,0 +1,37 @@
+<form #searchForm>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class=" form-group col-md-2">
+      <label for="exampleInputPassword1">Artista</label>
+      <input class="form-control" placeholder="Artista" [(ngModel)]="searchCriteria.artist" name="artist">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="exampleInputPassword1">Cancion</label>
+      <input class="form-control" placeholder="Cancion" [(ngModel)]="searchCriteria.song" name="song">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="exampleInputPassword1">Genero</label>
+      <select class="form-control" [(ngModel)]="searchCriteria.genre" name="genre">
+        <option *ngFor="let genre of genres" [value]="genre.id">{{genre.name}}</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary" style="margin-top: 20px" (click)="searchSongs()"> Buscar </button>
+      <button type="submit" class="btn btn-default" style="margin-top: 20px; margin-left: 5px" (click)="cleanForm()"> Limpiar </button>
+    </div>
+  </div>
+</form>
+
+<div>
+  <span> Tabla de canciones</span>
+  <table class="table">
+    <tr>
+      <th *ngFor="let column of columns; let i = index">{{column}}</th>
+    </tr>
+    <tbody *ngFor="let song of songs">
+      <tr>
+        <td *ngFor="let column of columns; let i = index">{{song[column]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
