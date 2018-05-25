@@ -33,3 +33,7 @@ http://localhost:4200/
 Los puertos que se estan usando son los siguientes:
 4200 para el FE y 3000 para el BE
 
+NOTAS: Los selects traen los datos segun los filtros enviados pero no se tiene un dominio de filtro con eso me refieron que
+si se envia el title como 'party' pero se busca en Country ejemplo no traiga la cancion Party Rock.
+
+Ademas segun el pdf las propiedades de la tabla song son genre, song, duration, artist pero el campo song no exite en realidad es title.
