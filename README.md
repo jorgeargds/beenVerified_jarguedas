@@ -4,6 +4,8 @@ Detalles tecnicos:
 El FE esta en angular y el BE es expressjs para los datos se utiliza sqlite. 
 BeenVerified - Jr. Software Engineer
 
+Importante el BE debe de inicializarce primero que el FE debido que el FE carga los generos que se encuentran en BD.
+
 Para ejecutar el proyecto localmente se deben seguir los siguientes pasos:
 
 Instalar git en la maquina local una vez instalado realizar un git clone del repositorio 
